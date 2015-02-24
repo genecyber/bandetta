@@ -1,41 +1,11 @@
 
 # Bandetta
-
-
-# BootStrapped from SailsJS Blog
-#### Blog using SailsJS API for the backend, AngularJS for the front-end and MongoDB for the database.
-
-### Installation
 ```sh
-$ git clone https://github.com/etiennetremel/sailsjs-angular-blog.git
-$ cd sailsjs-angular-blog
+$ git clone https://github.com/genecyber/bandetta.git
+$ cd bandetta
 $ npm install
-```
-
-Then you will have to install bower dependencies:
-If you are not familiar with Bower, please check this [documentation](http://bower.io/).
-Make sure bower is installed globally, if not do:
-
-```sh
 $ npm install -g bower
-```
-
-...and install all the dependencies:
-
-```sh
 $ bower install
-```
-
-*Almost finish...*
-Configure Amazon Web Services to store all the picture: `/config/aws.js`
-
-Then configure MongoDB `/config/adapters.js`
-
-If you prefer, use the local configuration file `/config/local.js` to store all these informations (documentation available [here](http://sailsjs.org/#!documentation/config.local))
-
-And, lift sails:
-
-```sh
 $ sails lift
 ```
 
