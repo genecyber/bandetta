@@ -1,4 +1,8 @@
-# SailsJS Blog
+
+# Bandetta
+
+
+# BootStrapped from SailsJS Blog
 #### Blog using SailsJS API for the backend, AngularJS for the front-end and MongoDB for the database.
 
 ### Installation
