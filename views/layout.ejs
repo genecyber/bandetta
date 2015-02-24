@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en" ng-app="blogApp">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  <title>Blog App</title>
+
+  <!--STYLES-->
+  <link rel="stylesheet" href="/linker/bower_components/semantic/build/packaged/css/semantic.css">
+  <link rel="stylesheet" href="/linker/bower_components/angular-growl/build/angular-growl.min.js">
+  <link rel="stylesheet" href="/linker/styles/font-awesome.css">
+  <link rel="stylesheet" href="/linker/styles/ng-tags-input.css">
+  <link rel="stylesheet" href="/linker/styles/port.client.css">
+  <link rel="stylesheet" href="/linker/styles/port.vendor.css">
+  <!--STYLES END-->
+
+</head>
+<body ng-cloak>
+
+  <div style="margin:5px;">
+    <div >
+
+      <!-- Header -->
+      <div id="ember289" class="ember-view">
+        <nav class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+              <div class="navbar-header">
+
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bandetta-navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+
+                  <a class="navbar-brand" href="/">
+                      <!--<img src="images/logo2.png" alt="Bandetta" style="margin-top:-2px;"/>-->                
+                      <i class="fa fa-ticket fa-lg" style="color: #2DA5DF;"></i>
+                      <span style="font-family: Open Sans Semibold; font-size: 17px;">Bandetta</span>
+                      / <span class="label label-warning" style="font-size: 9px; margin-top: 0px;">Alpha</span>
+                  </a>
+              </div>        
+              <div class="collapse navbar-collapse" id="bandetta-navbar-collapse" ng-controller="NavCtrl">
+                  <!-- <form class="navbar-form navbar-right" role="search"> -->            
+                      <!-- <div class="input-group">
+                          <input type="text" id="search-input" ng-model="searchQuery" class="form-control" placeholder="Search...">
+                          <span class="input-group-btn">
+                              <button type="submit" class="btn btn-default">
+                                  <i class="search link icon" ng-click="search()"></i>
+                              </button>
+                          </span>
+                      </div> -->
+                  <!-- </form> -->
+                <div class="item" >
+                    <form class="navbar-form navbar-right" role="search">
+                    <div class="input-group">
+                        <input type="text" id="search-input" ng-model="searchQuery" placeholder="Search for..." class="form-control">
+                        <span class="input-group-btn">
+                          <button class="btn btn-default" type="button" ng-click="search()">
+                              <i class="search link icon" ng-click="search()"></i>
+                          </button>
+                        </span>
+                    </div>
+                  </div>
+                </form>
+          </div>    
+        </nav>
+      </div>
+
+      <!-- Main navigation -->
+      <!-- <div class="ui secondary pointing menu" ng-controller="NavCtrl">
+        <a class="item" href="/">
+          <i class="home icon"></i> Home
+        </a>
+        <a class="item" ng-show="isAuthenticated" href="/post/create">
+          <i class="file icon"></i> New Post
+        </a>
+        <div class="right menu">
+          <div class="item">
+            <div class="ui icon input">
+              <input type="text" id="search-input" ng-model="searchQuery" placeholder="Search for...">
+              <i class="search link icon" ng-click="search()"></i>
+            </div>
+          </div>
+           <a ng-hide="isAuthenticated" class="ui item" show-modal="#modal-login">
+            <i class="lock icon"></i> Login</a>
+          <a class="ui item" ng-show="isAuthenticated" ng-click="logout()">
+            <i class="unlock icon"></i> Logout
+          </a>
+        </div>
+      </div>
+    </div> --> 
+
+    <!-- Main view -->
+    <div class="ui column container container-page" ng-controller="NavCtrl">
+      <div class="row">
+      <div class="col-xs-12 col-md-2 menu">
+        <div class="panel panel-default">              
+            <div class="panel-heading"><i class="home icon" style="font-size:75%;"></i> Navigation</div>              
+            <div class="panel-body" style="padding: 10px;">
+                <a class="ember-view btn btn-default btn-block btn-menu" href="/bands">
+                    <i class="glyphicon glyphicon-music"></i> Discover
+                </a>
+                <a ng-show="isAuthenticated" class="ember-view btn btn-default btn-block btn-menu" href="/post/create">
+                    <i class="file icon"></i> New Post
+                </a>
+            </div>
+        </div>
+
+        <div class="panel panel-default" ng-controller="NavCtrl">              
+            <div class="panel-heading"><i class="fa fa-user"></i> Session</div>
+            <div class="panel-body" style="padding: 10px;">                  
+                    <img ng-show="isAuthenticated" style="width:150px;" src="images/head.jpg"/>
+                    <a ng-hide="isAuthenticated" class="ember-view btn btn-success btn-block btn-menu" show-modal="#modal-login">
+                      <i class="lock icon"></i> Sign In
+                    </a>
+                    <a ng-show="isAuthenticated" class="ember-view btn btn-success btn-block btn-menu" ng-click="logout()">
+                      <i class="unlock icon"></i> Sign Out
+                    </a>
+
+
+                    <p ng-hide="isAuthenticated" style="font-size: 13px; margin-bottom: 0px; margin-top: 5px;">or <a href="#">create</a> an account.</p>                 
+
+            </div>
+        </div>
+        
+      </div>
+      <!-- End nav -->
+        <article class="col-xs-12 col-md-10" ng-view>
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Welcome to Bandetta!</h4>
+              <hr>
+            </div>
+          </div>
+        </article>
+      </div>
+  </div>
+
+  <!-- Growl notification system -->
+  <div growl></div>
+
+  <!-- Login modal -->
+  <div class="ui modal" id="modal-login" ng-controller="AuthCtrl" auth>
+    <i class="close icon"></i>
+    <div class="header">
+      Login
+    </div>
+    <div class="content">
+      <div class="ui form segment">
+        <div class="field">
+          <label>Username</label>
+          <div class="ui left labeled icon input">
+            <input type="text" ng-model="username" placeholder="Username">
+            <i class="user icon"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Password</label>
+          <div class="ui left labeled icon input">
+            <input type="password" ng-model="password" placeholder="Password">
+            <i class="lock icon"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
+          </div>
+        </div>
+        <div class="ui red message" ng-class="{ error: !errorMessage }">
+          {{ errorMessage }}
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui button cancel">Cancel</div>
+      <div class="ui blue button positive">Login</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <p class="container">
+      </p><p>
+        <b>Bandetta.</b>
+        <span class="slogan">
+          A fusion of <b>Ƀitcoin</b> and <b>music</b>.
+        </span>
+      </p>    
+      <p class="copyright-notice">Except where otherwise noted, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><b>Creative Commons Attribution 4.0 International license.</b></a></p>
+    <p></p><br>
+  </footer>
+
+  <!--SCRIPTS-->
+  <script src="/linker/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/linker/bower_components/angular/angular.js"></script>
+  <script src="/linker/bower_components/angular-route/angular-route.js"></script>
+  <script src="/linker/bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/linker/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/linker/bower_components/angular-growl/build/angular-growl.js"></script>
+  <script src="/linker/bower_components/ng-tags-input/ng-tags-input.js"></script>
+  <script src="/linker/bower_components/moment/moment.js"></script>
+  <script src="/linker/bower_components/semantic/build/packaged/javascript/semantic.js"></script>
+  <script src="/linker/bower_components/showdown/src/showdown.js"></script>
+  <script src="/linker/bower_components/truncate/jquery.truncate.js"></script>
+  <script src="/linker/app/app.js"></script>
+  <script src="/linker/app/controllers.js"></script>
+  <script src="/linker/app/controllers/AuthCtrl.js"></script>
+  <script src="/linker/app/controllers/BandIndexCtrl.js"></script>
+  <script src="/linker/app/controllers/BandShowCtrl.js"></script>
+  <script src="/linker/app/controllers/BandViewControl.js"></script>
+  <script src="/linker/app/controllers/NavCtrl.js"></script>
+  <script src="/linker/app/controllers/PostEditCtrl.js"></script>
+  <script src="/linker/app/controllers/PostIndexCtrl.js"></script>
+  <script src="/linker/app/controllers/PostShowCtrl.js"></script>
+  <script src="/linker/app/directives.js"></script>
+  <script src="/linker/app/filters.js"></script>
+  <script src="/linker/app/services.js"></script>
+  <!--SCRIPTS END-->
+
+</body>
+</html>

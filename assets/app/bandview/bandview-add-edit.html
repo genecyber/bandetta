@@ -1,0 +1,9 @@
+<h1>Add / Edit bandview</h1>
+<form name="new_bandview_form">
+    <div ng-repeat="(attr_name, attr_value) in model_def">
+        <label for="{{attr_name}}">{{attr_name}}</label>
+        <input type="text" ng-model="bandview[attr_name]" name="{{attr_name}}" />
+    </div>
+    <button ng-click="save(bandview)">Save bandview</button>
+    <button ui-sref="bandviews.list">Cancel</button>
+</form>

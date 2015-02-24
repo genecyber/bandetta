@@ -1,0 +1,19 @@
+<h1 ng-show="pageTitle">{{ pageTitle }}</h1>
+
+<div >
+  <div class="ui segment">
+    <h2 class="ui header">{{ datas.band.bandname }}</h2>
+    <p>{{datas.band.tagline}}</p>
+    <p>{{datas.band.about}}</p>
+    <p>{{datas.band.video}}</p>
+
+
+    <div class="ui attached label top right">
+      Updated {{ datas.band.createdAt | timeago }}
+    </div>    
+
+  </div>
+
+  
+</div>
+

@@ -1,0 +1,31 @@
+<h1 ng-show="pageTitle">{{ pageTitle }}</h1>
+
+<div class="ui segment" ng-hide="datas.bands.length">
+  <h2 class="ui header">
+    <i class="attention icon"></i>
+    <div class="content">
+      Woops!
+      <div class="sub header">No bands found.</div>
+    </div>
+  </h2>
+</div>
+
+<div ng-show="datas.bands.length">
+  <div class="ui segment" ng-repeat="band in datas.bands">
+    <h2 class="ui header" ><a href="/bandview/{{ band.id }}" >{{ band.bandname }}</a></h2>
+
+    <div class="ui attached label top right">
+      Updated {{ band.createdAt | timeago }}
+    </div>    
+
+  </div>
+
+  <div ng-show="datas.currentPage > 1" class="left floated eight wide column">
+    <a href="{{ prevLink }}" class="ui small button"><i class="icon arrow left"></i> Previous Bands</a>
+  </div>
+
+  <div ng-show="datas.currentPage < datas.totalBosts / datas.perPage" class="floated eight wide column right aligned">
+    <a href="{{ nextLink }}" class="ui small button">Next Bands <i class="icon arrow right"></i></a>
+  </div>
+</div>
+

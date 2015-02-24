@@ -1,0 +1,181 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/opensans-regular.eot');
+  src: url('fonts/opensans-regular.eot?#iefix') format('embedded-opentype'), url('fonts/opensans-regular.woff') format('woff'), url('fonts/opensans-regular.ttf') format('truetype'), url('fonts/opensans-regular.svg#open_sans') format('svg');
+}
+@font-face {
+  font-family: 'Open Sans Semibold';
+  src: url('fonts/opensans-semibold.eot');
+  src: url('fonts/opensans-semibold.eot?#iefix') format('embedded-opentype'), url('fonts/opensans-semibold.woff') format('woff'), url('fonts/opensans-semibold.ttf') format('truetype'), url('fonts/opensans-semibold.svg#open_sanssemibold') format('svg');
+}
+body {
+  background-color: #f1f1f1;
+  overflow-y: scroll;
+}
+nav {
+  border: none !important;
+  margin-bottom: 40px !important;
+  border-bottom: 2px solid #fff !important;
+  box-shadow: 0 0 12px #d5d5d5;
+}
+.menu {
+  font-family: "Open Sans";
+}
+.menu .semi-bold {
+  font-family: "Open Sans Semibold";
+}
+.menu hr {
+  height: 1px;
+  margin: 10px 0;
+}
+.btn-menu {
+  font-family: "Open Sans Semibold";
+}
+.navbar-form .input-group input {
+  font-family: "Open Sans Semibold";
+}
+article {
+  font-family: "Open Sans";
+}
+article h2 {
+  font-family: "Open Sans Semibold";
+}
+hr {
+  height: 1px;
+}
+footer {
+  color: #444;
+}
+footer p {
+  text-align: center;
+}
+footer hr {
+  color: #444;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+footer .slogan {
+  color: #666;
+}
+footer .copyright-notice {
+  font-size: 12px;
+  color: #999;
+}
+.twitter-feed {
+  font-family: "Open Sans";
+}
+.twitter-feed .author {
+  font-size: 12px;
+  color: #777;
+}
+.fa-verified {
+  color: #2da5df;
+  cursor: default;
+}
+.container-social {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.btn-vimeo {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  color: #888;
+  padding: 4px 5px !important;
+  margin-bottom: 4px;
+}
+.btn-vimeo:hover {
+  background-color: #1ab7ea;
+  border: 1px solid #15b2e5;
+  box-shadow: inset 0 2px #77d4f3;
+}
+.btn-youtube {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  color: #888;
+  padding: 4px 5px !important;
+  margin-bottom: 4px;
+}
+.btn-youtube:hover {
+  background-color: #cf2022;
+  border: 1px solid #c61f21;
+  box-shadow: inset 0 2px #e86d6e;
+}
+.btn-facebook {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  color: #888;
+  padding: 4px 5px !important;
+  margin-bottom: 4px;
+}
+.btn-facebook:hover {
+  background-color: #3b5998;
+  border: 1px solid #385591;
+  box-shadow: inset 0 2px #718dc8;
+}
+.btn-instagram {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  color: #888;
+  padding: 4px 5px !important;
+  margin-bottom: 4px;
+}
+.btn-instagram:hover {
+  background-color: #4d7ca0;
+  border: 1px solid #4a7799;
+  box-shadow: inset 0 2px #8cadc7;
+}
+.btn-twitter {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  color: #888;
+  padding: 4px 5px !important;
+  margin-bottom: 4px;
+}
+.btn-twitter:hover {
+  background-color: #43a7e0;
+  border: 1px solid #3aa3df;
+  box-shadow: inset 0 2px #9bd0ee;
+}
+.btn-soundcloud {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  color: #888;
+  padding: 4px 5px !important;
+  margin-bottom: 4px;
+}
+.btn-soundcloud:hover {
+  background-color: #f6660f;
+  border: 1px solid #f26109;
+  box-shadow: inset 0 2px #faa571;
+}
+.btn-spotify {
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  color: #888;
+  padding: 4px 5px !important;
+  margin-bottom: 4px;
+}
+.btn-spotify:hover {
+  background-color: #86be41;
+  border: 1px solid #81b63e;
+  box-shadow: inset 0 2px #b6d88d;
+}
+.information {
+  font-style: italic;
+  font-size: 12px;
+  color: #555;
+}
+.information .fa {
+  font-style: italic;
+}
+.btn {
+  font-family: "Open Sans Semibold";
+}
+.panel-heading {
+  font-family: "Open Sans Semibold";
+}

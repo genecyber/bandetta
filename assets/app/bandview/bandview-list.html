@@ -1,0 +1,12 @@
+<h1>Bandviews</h1>
+<ul>
+    <li ng-repeat="bandview in bandviews">
+        <div>
+            <p ng-repeat="(key, val) in model_def">{{key}} : {{bandview[key]}}</p>
+        </div>
+        <a href="" ui-sref="bandviews.edit({ id: bandview.id })">Edit</a>
+        <a href="" ng-click="remove(bandview)">Delete</a>
+    </li>
+</ul>
+<div ng-show="bandviews.length === 0">Looks like you haven't added any bandviews yet?</div>
+<a ng-hide="adding" ui-sref="bandviews.add">Add A New Bandview</a>
